@@ -24,11 +24,7 @@ function onInputEvent(evt) {
     return;
   }
 
-  fetchCountries(inputNameCountry)
-    .then(countries => {
-      return makeCountriesMarkup(countries);
-    })
-    .catch(errMessage);
+  fetchCountries(inputNameCountry).then(makeCountriesMarkup).catch(errMessage);
 }
 
 function makeCountriesMarkup(countries) {
