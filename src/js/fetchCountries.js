@@ -11,6 +11,5 @@ export function fetchCountries(name) {
     })
     .then(countries => {
       return countries;
-    })
-    .catch(console.log);
+    });
 }
