@@ -31,7 +31,7 @@ function makeCountriesMarkup(countries) {
   if (countries.length > 10) {
     return Notify.info('Too many matches found. Please enter a more specific name.');
   }
-  if (countries.length > 2) {
+  if (countries.length >= 2) {
     clearCountriesList(refs.countrieInfo);
     return (refs.countriesList.innerHTML = countriesListTpl(countries));
   }
@@ -39,6 +39,7 @@ function makeCountriesMarkup(countries) {
   countries.map(({ name, flags, capital, population, languages }) => {
     const capitalOfCountrie = capital.join('');
     const languagesOfCountrie = Object.values(languages).join(', ');
+
     refs.countrieInfo.innerHTML = countrieCardTpl({
       name,
       flags,
